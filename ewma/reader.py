@@ -20,7 +20,6 @@ class Reader:
         return self.client.get_stock_snapshot (snapshotRequest)
 
 
-
 def main ():
     stockName = "SPY"
     trading_client = TradingClient (os.getenv ("APCA-API-KEY-ID"), os.getenv ("APCA-API-SECRET-KEY"))
