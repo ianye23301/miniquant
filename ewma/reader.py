@@ -16,7 +16,7 @@ class Reader:
         self.client = StockHistoricalDataClient (os.getenv("APCA-API-KEY-ID"), os.getenv("APCA-API-SECRET-KEY"))
 
     def poll (self):
-        snapshotRequest = StockSnapshotRequest (symbol_or_symbols=[self.stock])
+        snapshotRequest = StockSnapshotRequest (symbol_or_symbols=self.stock)
         return self.client.get_stock_snapshot (snapshotRequest)
 
 
@@ -30,7 +30,6 @@ def main ():
         return
 
     reader = Reader (stockName)
-    print (reader.poll ())
 
 
 main()
